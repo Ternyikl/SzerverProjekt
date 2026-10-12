@@ -94,7 +94,7 @@ namespace SzerverProjekt
                 .GroupBy(n => n.SzerverAzonosito)
                 .OrderByDescending(g => g.Count()).ThenBy(g => g.Key)
                 .Join(szerverek, g => g.Key, sz => sz.Azonosito, (g, sz) => sz.Nev)
-                .FirstOrDefault()!;
+                .First()!;
             return legtobbHibasSzerverNeve;
         }
 
