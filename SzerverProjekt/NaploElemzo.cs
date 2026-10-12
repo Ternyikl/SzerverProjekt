@@ -124,7 +124,8 @@ namespace SzerverProjekt
         // 11. Kapcsold össze a budapesti szervereket a naplóikkal, és gyűjtsd ki az ott történt összes hibaüzenetet!
         public List<string> BudapestiSzerverekUzenetei()
         {
-            List<string> budapestiSzerverekUzenetei = szerverek.Where(sz => sz.Helyszin == "Budapest").Join(naplok, sz => sz.Azonosito, n => n.SzerverAzonosito, (sz, n) => n.Uzenet)
+            List<string> budapestiSzerverekUzenetei = szerverek.Where(sz => sz.Helyszin == "Budapest")
+                .Join(naplok, sz => sz.Azonosito, n => n.SzerverAzonosito, (sz, n) => n.Uzenet)
                 .ToList();
             return budapestiSzerverekUzenetei;
         }
