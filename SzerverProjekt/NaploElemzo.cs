@@ -73,7 +73,7 @@ namespace SzerverProjekt
             return sulyosHibakSzama;
         }
 
-        // 5. Van-e olyan sz, amelyhez egyáltalán nem tartozik hibanapló? (True/False)
+        // 5. Van-e olyan szerver, amelyhez egyáltalán nem tartozik hibanapló? (True/False)
         public bool VanNaploNelkuliSzerver()
         {
             bool vanNaploNelkuliSzerver = szerverek.Any(sz => !naplok.Any(n => n.SzerverAzonosito == sz.Azonosito));
